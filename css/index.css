@@ -1,6 +1,14 @@
+@media (min-width:2000px){
+    html{
+        width: 1920px;
+        margin: 0 auto;
+    }
+}
+
 html{
     font-family: 'Pretendard', sans-serif;
     font-size: var(--basic-font-pc);
+    scroll-behavior: smooth;
 }
 .yel{
   font-family: "Yellowtail", cursive;
@@ -18,7 +26,7 @@ p{
     height: 100vh;
     min-height: 700px;
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.803) 10%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.803) 90%),
+    /* linear-gradient(rgba(0, 0, 0, 0.803) 10%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.803) 90%), */
     url(../img/hero.jpg) no-repeat 50% 50% / cover;
     color: #fff;
     display: flex;
@@ -35,6 +43,9 @@ p{
     justify-content: space-between;
     padding: 1rem 0;
 }
+.hero-txt .swiper-slide {
+    color: #ff6188;}
+
 .hero-txt1 span{
     font-weight: var(--fw-bold);
     margin-right: 1rem;
@@ -44,7 +55,18 @@ p{
 }
 .hero-txt-wrap{
     padding: 1rem 0;
-    border: 1px solid #fff;
+
+        /* 1. 배경 투명도 설정 (하얀색을 얇게 깔아줍니다) */
+    background: rgba(255, 255, 255, 0.2); 
+    
+    /* 2. 배경 흐리게 (이게 핵심입니다!) */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* 사파리 브라우저 호환용 */
+
+    /* 3. 테두리를 살짝 주면 더 유리 같아요 */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+
+    /* border: 1px solid #fff; */
     pointer-events: none;
 }
 .hero-txt{
@@ -63,11 +85,13 @@ p{
 }
 .pro-title{
     display: flex;
-    gap:1rem;margin-bottom: 3rem;
+    gap:1rem;
+    margin-bottom: 3rem;
     /* background-color: yellow;
     z-index: 50px; */
-    padding:1rem 0; 
-    border-bottom: solid 1px #66B994;
+    padding:3rem 0; 
+    border-bottom: solid 1px #ff7755;
+
 }
 .pro-title>section{
     flex: 1;
@@ -579,14 +603,14 @@ p{
 .project-content h4+p{
     margin-bottom: 1.5rem;
 }
-.project-sticky{
+.project-sticky {
     display: flex;
     justify-content: center;
-    gap:1rem;
+    gap: 1rem;
     margin-top: 3rem;
     margin-bottom: 3rem;
     position: sticky;
-    top:1rem;
+    top: 1.5rem;
     font-weight: 500;
 }
 .project-sticky a{
@@ -840,7 +864,7 @@ p{
     }
     .hero{
     background: 
-    linear-gradient(rgba(0, 0, 0, 0.803) 10%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.803) 90%),
+    /* linear-gradient(rgba(0, 0, 0, 0.803) 10%, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.803) 90%), */
     url(../img/hero-mo.jpg) no-repeat 50% 50% / cover;
     color: #fff;
     }
